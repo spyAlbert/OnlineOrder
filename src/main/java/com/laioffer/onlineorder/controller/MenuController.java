@@ -27,7 +27,7 @@ public class MenuController {
     }
 
 
-    @GetMapping("/restaurant/{restaurantId}/menu")
+    @GetMapping("/restaurants/{restaurantId}/menu")
     public List<MenuItemEntity> getMenuByRestaurant(@PathVariable("restaurantId") long restaurantId) {
         return menuItemService.getMenuItemsByRestaurantId(restaurantId);
     }

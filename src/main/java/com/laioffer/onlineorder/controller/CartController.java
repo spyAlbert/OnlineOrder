@@ -4,10 +4,8 @@ package com.laioffer.onlineorder.controller;
 import com.laioffer.onlineorder.model.AddToCartBody;
 import com.laioffer.onlineorder.model.CartDto;
 import com.laioffer.onlineorder.service.CartService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -23,6 +21,7 @@ public class CartController {
 
 
     @GetMapping("/cart")
+    @ResponseStatus(HttpStatus.CREATED)
     public CartDto getCart() {
         return cartService.getCart(1L);
     }
